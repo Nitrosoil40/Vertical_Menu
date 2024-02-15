@@ -27,7 +27,7 @@
   
             <ul id="menu-content" class="menu-content collapse out">
                 <li>
-                  <a href="#">
+                  <a href="#" onclick="activateSamples()">
                   <i class="fa fa-dashboard fa-lg"></i> Muestras de suelo
                   </a>
                 </li>
@@ -94,8 +94,8 @@
 const childFrame = document.getElementById('childFrame').contentWindow;
 
 // Función para enviar un mensaje al iframe hijo
-function sendMessageToChild(message) {
-    childFrame.postMessage(message, 'https://nitrosoil40.github.io');
+function activateSamples() {
+    childFrame.postMessage({ action: 'activateSamples' }, 'https://nitrosoil40.github.io');
 }
 
 // Función para activar las muestras de suelo en el hijo
